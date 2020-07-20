@@ -47,7 +47,7 @@ public class Person implements Serializable {
     }
 
     public String printShortData(){
-        return "Imie: " + name + " Nazwisko:  " + surname + " Pensja " + salary;
+        return "Imie: " + name + " Nazwisko: " + surname + " Pensja: " + salary;
     }
 
     public String specialPrintData(){
@@ -134,5 +134,17 @@ public class Person implements Serializable {
 
     public void setMaritalStatus(boolean maritalStatus) {
         this.maritalStatus = maritalStatus;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
+
+    public String formatPersonToOutput(){
+        return surname + " " + name + " " + age + " " + maritalStatus + " " + kidsNumber;
     }
 }
