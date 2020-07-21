@@ -121,6 +121,41 @@ public class EmployeesList {
         System.out.println("6. Martial Status");
     }
 
+    public int countEmployeesWithSalaryHigherThan(float providedSalary){
+        int employeesNumber = 0;
+        for (Person person:employeesList) {
+            if(person.getSalary() >= providedSalary)
+                employeesNumber++;
+        }
+        return employeesNumber;
+    }
+
+    public float countAverageSalaryInUnit(int unitNumber){
+        float averageSalary = 0;
+        int numberOfEmployeesInUnit = 0;
+        if(unitNumber > 0){
+            for (Person person: employeesList) {
+                averageSalary = averageSalary + person.getSalary();
+                numberOfEmployeesInUnit++;
+            }
+        }
+        return averageSalary / numberOfEmployeesInUnit;
+    }
+
+    public void printHighestSalaryPerSex(){
+        float highestSalaryMen = 0;
+        float highestSalaryWoman = 0;
+        for (Person person: employeesList) {
+            if(person.getSex() == 'M'){
+                highestSalaryMen = Math.max(highestSalaryMen, person.getSalary());
+            }else if(person.getSex() =='F'){
+                highestSalaryWoman = Math.max(highestSalaryWoman, person.getSalary());
+            }
+        }
+        System.out.println("Highest salary for men is " + highestSalaryMen);
+        System.out.println("Highest salary for women is " + highestSalaryWoman);
+    }
+
 
 
 
